@@ -1,9 +1,9 @@
 import ClientDetail from "../../components/clientDetail";
 import ClientList from "../../components/clientList";
-import useGetClients from "../../services/useGetClients";
+import useClientsContext from "../../hooks/useClientsContext/useClientsContext";
 
 const Directory = () => {
-  const { clients } = useGetClients();
+  const { clients } = useClientsContext();
   return (
     <>
       <div>{JSON.stringify(clients)}</div>
