@@ -1,9 +1,16 @@
-import { createContext, useMemo } from "react";
+import { createContext, ReactNode, useMemo } from "react";
 import useGetClients from "../../services/useGetClients";
+import { Client } from "../../types/clients";
 
-const Context = createContext(null);
+interface ClientsContext {
+  clients: Client[];
+  isLoading: boolean;
+  isError: boolean;
+}
 
-const ClientsProvider = ({ children }) => {
+const Context = createContext<ClientsContext | null>(null);
+
+const ClientsProvider = ({ children }: { children: ReactNode }) => {
   const { clients, isLoading, isError } = useGetClients();
 
   const contextValue = useMemo(
