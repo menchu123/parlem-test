@@ -6,8 +6,7 @@ const Directory = () => {
   const { clients } = useClientsContext();
   return (
     <>
-      <div>{JSON.stringify(clients)}</div>
-      <ClientList />
+      <ClientList clients={clients} />
       <ClientDetail />
     </>
   );

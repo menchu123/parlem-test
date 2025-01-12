@@ -1,11 +1,18 @@
+import { Client } from "../../types/clients";
 import ClientListItem from "./clientListItem";
 import Filter from "./filters";
 
-const ClientList = () => {
+interface Props {
+  clients: Client[];
+}
+
+const ClientList = ({ clients }: Props) => {
   return (
     <>
       <Filter />
-      <ClientListItem />
+      {clients.map((client) => (
+        <ClientListItem client={client} key={client.id} />
+      ))}
     </>
   );
 };
