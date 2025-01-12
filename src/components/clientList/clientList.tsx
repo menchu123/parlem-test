@@ -1,6 +1,6 @@
 import { Client } from "../../types/clients";
 import ClientListItem from "./clientListItem";
-import Filter from "./filters";
+import Search from "./filters";
 
 interface Props {
   clients: Client[];
@@ -9,7 +9,7 @@ interface Props {
 const ClientList = ({ clients }: Props) => {
   return (
     <section>
-      <Filter />
+      <Search />
       <ul>
         {!!clients &&
           clients.map((client) => (
