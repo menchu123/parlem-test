@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import useClientsContext from "../../../hooks/useClientsContext/useClientsContext";
+import { Input } from "./search.style";
 
 const Search = () => {
   const { setSearchTerm } = useClientsContext();
@@ -9,7 +10,14 @@ const Search = () => {
     setSearchQuery(event.target.value);
     setSearchTerm(event.target.value);
   };
-  return <input type="text" value={searchQuery} onChange={handleSearch} />;
+  return (
+    <Input
+      type="text"
+      value={searchQuery}
+      onChange={handleSearch}
+      placeholder="Buscar..."
+    />
+  );
 };
 
 export default Search;

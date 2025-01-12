@@ -1,0 +1,14 @@
+import styled from "styled-components";
+import { COLORS } from "../../../styles/constants";
+
+const ClientButton = styled.button<{ $isSelected: boolean }>`
+  width: 280px;
+  height: 34px;
+  padding: 8px;
+  margin: 8px 10px;
+  text-align: left;
+  background-color: ${({ $isSelected }) =>
+    $isSelected ? COLORS.brand : COLORS.white};
+`;
+
+export { ClientButton };
