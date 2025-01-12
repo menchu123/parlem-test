@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { COLORS } from "../../../styles/constants";
 
 const ClientButton = styled.button<{ $isSelected: boolean }>`
-  width: 300px;
+  width: 280px;
   height: 34px;
   padding: 8px;
   margin: 8px 10px;
