@@ -7,10 +7,13 @@ interface Props {
 }
 
 const ClientListItem = ({ client }: Props) => {
-  const { setSelectedClient } = useClientsContext();
+  const { selectedClientId, setSelectedClientId } = useClientsContext();
 
   return (
-    <ClientButton onClick={() => setSelectedClient(client.id)}>
+    <ClientButton
+      onClick={() => setSelectedClientId(client.id)}
+      $isSelected={client.id === selectedClientId}
+    >
       {`${client.givenName} ${client.familyName1} ${client.familyName2}`}
     </ClientButton>
   );

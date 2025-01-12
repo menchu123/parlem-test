@@ -6,15 +6,15 @@ interface ClientsContext {
   clients: Client[];
   isLoading: boolean;
   isError: boolean;
-  selectedClient: number | null;
-  setSelectedClient: (selectedClientId: number) => void;
+  selectedClientId: number | null;
+  setSelectedClientId: (selectedClientIdId: number) => void;
   setSearchTerm: (searchTerm: string) => void;
 }
 
 const Context = createContext<ClientsContext | null>(null);
 
 const ClientsProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedClient, setSelectedClient] = useState<number | null>(null);
+  const [selectedClientId, setSelectedClientId] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
   const { clients, isLoading, isError } = useGetClients(searchTerm);
 
@@ -23,11 +23,11 @@ const ClientsProvider = ({ children }: { children: ReactNode }) => {
       clients,
       isLoading,
       isError,
-      selectedClient,
-      setSelectedClient,
+      selectedClientId,
+      setSelectedClientId,
       setSearchTerm,
     }),
-    [clients, isLoading, isError, selectedClient]
+    [clients, isLoading, isError, selectedClientId]
   );
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

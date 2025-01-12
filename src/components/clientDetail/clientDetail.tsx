@@ -9,8 +9,8 @@ import {
 } from "./clientDetail.style";
 
 const ClientDetail = () => {
-  const { selectedClient } = useClientsContext();
-  const { client, isLoading } = useGetClient(selectedClient);
+  const { selectedClientId } = useClientsContext();
+  const { client, isLoading } = useGetClient(selectedClientId);
 
   return (
     <DetailContainer>

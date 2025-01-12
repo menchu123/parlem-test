@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import { COLORS } from "../../styles/constants";
 
 const DetailContainer = styled.section`
   display: flex;
   flex-grow: 2;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  padding: 20px;
+  background-color: ${COLORS.white};
 `;
 
 const Detail = styled.div`
@@ -19,7 +21,7 @@ const Product = styled.div`
   width: 250px;
   padding: 10px;
   margin: 10px 10px 0 0;
-  background-color: #fff;
+  background-color: ${COLORS.brand};
 `;
 
 const ProductList = styled.section`
