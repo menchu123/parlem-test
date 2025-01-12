@@ -8,13 +8,15 @@ interface ClientsContext {
   isError: boolean;
   selectedClient: number | null;
   setSelectedClient: (selectedClientId: number) => void;
+  setSearchTerm: (searchTerm: string) => void;
 }
 
 const Context = createContext<ClientsContext | null>(null);
 
 const ClientsProvider = ({ children }: { children: ReactNode }) => {
-  const { clients, isLoading, isError } = useGetClients();
   const [selectedClient, setSelectedClient] = useState<number | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string | null>(null);
+  const { clients, isLoading, isError } = useGetClients(searchTerm);
 
   const contextValue = useMemo(
     () => ({
@@ -23,6 +25,7 @@ const ClientsProvider = ({ children }: { children: ReactNode }) => {
       isError,
       selectedClient,
       setSelectedClient,
+      setSearchTerm,
     }),
     [clients, isLoading, isError, selectedClient]
   );
