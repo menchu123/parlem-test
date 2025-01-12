@@ -1,14 +1,14 @@
 import { ReactNode } from "react";
-import { MainContainer, AppLayout } from "./layout.style";
+import { MainContainer, AppLayout, AppTitle, Header } from "./layout.style";
 import Search from "../clientList/filters";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <AppLayout>
-      <header>
-        Clients
+      <Header>
+        <AppTitle>Clientes - Parlem</AppTitle>
         <Search />
-      </header>
+      </Header>
       <MainContainer>{children}</MainContainer>
     </AppLayout>
   );
