@@ -9,7 +9,9 @@ const ClientListItem = ({ client }: Props) => {
   const { setSelectedClient } = useClientsContext();
 
   return (
-    <button onClick={() => setSelectedClient(client.id)}>{client.name}</button>
+    <button onClick={() => setSelectedClient(client.id)}>
+      {client.givenName}
+    </button>
   );
 };
 

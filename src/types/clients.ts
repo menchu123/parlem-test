@@ -1,24 +1,26 @@
-export type ProductType =
-  | "Fibra + Mobil"
-  | "Fibra + Fix"
-  | "Mobil"
-  | "Agile TV"
-  | "Llum"
-  | "Plaques Solars";
+type ProductType = "FIBRA + MOBIL" | "FIBRA + FIX" | "MOBIL" | "AGILE TV";
 
-export interface Product {
+type DocType = "dni" | "nie" | "passport";
+
+interface Product {
   id: number;
-  type: ProductType;
-  details: string;
-  price: number;
+  productName: ProductType;
+  mbSpeed: number | null;
+  gbData: number | null;
+  numeracioTerminal: number;
+  soldAt: string;
+  customerId: string;
 }
 
 export interface Client {
   id: number;
-  name: string;
-  address: string;
+  docType: DocType;
+  docNum: string;
+  email: string;
+  customerId: string;
+  givenName: string;
+  familyName1: string;
+  familyName2: string;
   phone: string;
-  dni: string;
-  bank_details: string;
   products: Product[];
 }

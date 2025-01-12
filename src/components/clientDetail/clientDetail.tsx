@@ -8,7 +8,7 @@ const ClientDetail = () => {
   return (
     <>
       {!client && <div>Please select a client to see the details</div>}
-      <section>{client?.name}</section>
+      {client && <section>{client?.givenName}</section>}
     </>
   );
 };
