@@ -1,5 +1,5 @@
 const ClientDetail = () => {
-  return <div>ClientDetail</div>;
+  return <section>ClientDetail</section>;
 };
 
 export default ClientDetail;

@@ -8,12 +8,16 @@ interface Props {
 
 const ClientList = ({ clients }: Props) => {
   return (
-    <>
+    <section>
       <Filter />
-      {clients.map((client) => (
-        <ClientListItem client={client} key={client.id} />
-      ))}
-    </>
+      <ul>
+        {clients.map((client) => (
+          <li>
+            <ClientListItem client={client} key={client.id} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 
