@@ -11,11 +11,12 @@ const ClientList = ({ clients }: Props) => {
     <section>
       <Filter />
       <ul>
-        {clients.map((client) => (
-          <li>
-            <ClientListItem client={client} key={client.id} />
-          </li>
-        ))}
+        {!!clients &&
+          clients.map((client) => (
+            <li key={client.id}>
+              <ClientListItem client={client} />
+            </li>
+          ))}
       </ul>
     </section>
   );
