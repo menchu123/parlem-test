@@ -14,7 +14,6 @@ const Detail = styled.div`
   flex-grow: 1;
   width: 100%;
   height: 100%;
-  border: 1px solid white;
 `;
 
 const Product = styled.div`
