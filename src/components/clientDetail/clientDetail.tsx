@@ -1,7 +1,12 @@
 import useClientsContext from "../../hooks/useClientsContext/useClientsContext";
 import useGetClient from "../../services/useGetClient";
-import { Product } from "../../types/clients";
-import { Detail, DetailContainer } from "./clientDetail.style";
+import { Product as ProductType } from "../../types/clients";
+import {
+  Detail,
+  DetailContainer,
+  Product,
+  ProductList,
+} from "./clientDetail.style";
 
 const ClientDetail = () => {
   const { selectedClient } = useClientsContext();
@@ -29,9 +34,9 @@ const ClientDetail = () => {
             <strong>ID Cliente:</strong> {client.customerId}
           </p>
           <h2>Productos</h2>
-          <ul>
-            {client.products.map((product: Product) => (
-              <li key={product.id}>
+          <ProductList>
+            {client.products.map((product: ProductType) => (
+              <Product key={product.id}>
                 <p>
                   <strong>Nombre:</strong> {product.productName}
                 </p>
@@ -50,9 +55,9 @@ const ClientDetail = () => {
                   <strong>Fecha de Venta:</strong>{" "}
                   {new Date(product.soldAt).toLocaleDateString()}
                 </p>
-              </li>
+              </Product>
             ))}
-          </ul>
+          </ProductList>
         </Detail>
       )}
     </DetailContainer>

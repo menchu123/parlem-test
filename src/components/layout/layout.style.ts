@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AppLayout = styled.div`
-  max-width: 1000px;
+  width: 1000px;
   border: 1px solid green;
   margin: 30px auto;
 `;
