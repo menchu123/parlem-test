@@ -2,7 +2,7 @@ type ProductType = "FIBRA + MOBIL" | "FIBRA + FIX" | "MOBIL" | "AGILE TV";
 
 type DocType = "dni" | "nie" | "passport";
 
-interface Product {
+export interface Product {
   id: number;
   productName: ProductType;
   mbSpeed: number | null;
