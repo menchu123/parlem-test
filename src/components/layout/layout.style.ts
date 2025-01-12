@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const AppLayout = styled.div`
   max-width: 1000px;
-  margin: 30px auto;
   border: 1px solid green;
+  margin: 30px auto;
 `;
 
 const MainContainer = styled.main`
