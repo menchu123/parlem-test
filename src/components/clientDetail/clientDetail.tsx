@@ -10,13 +10,12 @@ import {
 
 const ClientDetail = () => {
   const { selectedClientId } = useClientsContext();
-  const { client, isLoading } = useGetClient(selectedClientId);
+  const { client, isError } = useGetClient(selectedClientId);
 
   return (
     <DetailContainer>
-      {!client && !isLoading && (
-        <p>Please select a client to see the details</p>
-      )}
+      {!selectedClientId && <p>Selecciona a un cliente para ver su ficha</p>}
+      {isError && <div>No se ha podido cargar la ficha del cliente</div>}
       {client && (
         <Detail>
           <h2>{`${client.givenName} ${client.familyName1} ${client.familyName2}`}</h2>

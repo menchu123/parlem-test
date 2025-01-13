@@ -10,6 +10,7 @@ const Search = () => {
     setSearchQuery(event.target.value);
     setSearchTerm(event.target.value);
   };
+
   return (
     <Input
       type="text"

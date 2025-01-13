@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "./api";
 
+//simulating the api provides a different endpoint for the client details
 const fetchClient = async (clientId: number) => {
   const { data } = await api.get(`/clients/${clientId}`);
   return data;
