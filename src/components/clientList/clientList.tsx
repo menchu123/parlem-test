@@ -1,22 +1,23 @@
-import { Client } from "../../types/clients";
+import useClientsContext from "../../hooks/useClientsContext/useClientsContext";
 import { ListContainer } from "./clientList.style";
 import ClientListItem from "./clientListItem";
 
-interface Props {
-  clients: Client[];
-}
+const ClientList = () => {
+  const { clients, isError } = useClientsContext();
 
-const ClientList = ({ clients }: Props) => {
   return (
     <ListContainer>
-      <ul>
-        {!!clients &&
-          clients.map((client) => (
+      {isError && <div>No se ha podido cargar el listado de clientes</div>}
+      {!!clients && !clients.length && <div>No hay resultados</div>}
+      {!!clients && (
+        <ul>
+          {clients.map((client) => (
             <li key={client.id}>
               <ClientListItem client={client} />
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </ListContainer>
   );
 };

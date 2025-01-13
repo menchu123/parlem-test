@@ -8,6 +8,8 @@ const checkSearch = (search: string, item: string) => {
 
 const fetchClients = async (searchTerm: string | null) => {
   const { data } = await api.get("/clients");
+
+  //simulating the api provides a search param
   const filteredData = searchTerm
     ? data.filter(
         (client: Client) =>
